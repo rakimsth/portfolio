@@ -84,9 +84,17 @@ The project is inspired by [Visual Studio Code](https://github.com/microsoft/vsc
    ```
 4. Add your markdown pages in `public/pages`
 5. Add your routes in `src/app/pages/page.ts`, make sure the names of pages are consistent with markdown files.
+
    ```ts
+   import { GiBinoculars } from 'react-icons/gi';
+
    export const pages = [
-     { index: 0, name: 'overview.md', route: '/overview' },
+     {
+       index: 0,
+       name: 'overview.md',
+       route: '/overview',
+       icon: <GiBinoculars color="#D07000" />,
+     },
      { index: 1, name: 'skills.md', route: '/skills' },
      { index: 2, name: 'experience.md', route: '/experience' },
      { index: 3, name: 'education.md', route: '/education' },
@@ -95,6 +103,7 @@ The project is inspired by [Visual Studio Code](https://github.com/microsoft/vsc
      { index: 6, name: 'accomplishments.md', route: '/accomplishments' },
    ];
    ```
+
 6. Add your social links in `src/app/pages/link.tsx`, which will appear in both sidebar and homepage.
    ```ts
    export const links = [
