@@ -12,6 +12,7 @@ interface Page {
   index: number;
   name: string;
   route: string;
+  icon: JSX.Element;
 }
 
 interface Props {
@@ -19,6 +20,7 @@ interface Props {
     index: number;
     name: string;
     route: string;
+    icon: JSX.Element;
   }[];
   selectedIndex: number;
   setSelectedIndex: React.Dispatch<React.SetStateAction<number>>;
@@ -82,7 +84,7 @@ export default function AppTree({
           setSelectedIndex(-1);
         }}
       >
-        {pages.map(({ index, name, route }) => (
+        {pages.map(({ index, name, route, icon }) => (
           <TreeItem
             key={index}
             nodeId={index.toString()}
@@ -94,7 +96,7 @@ export default function AppTree({
                 backgroundColor: renderTreeItemBgColor(index),
               },
             }}
-            icon={<VscMarkdown color="#6997d5" />}
+            icon={icon || <VscMarkdown color="#6997d5" />}
             onClick={() => {
               if (!visiblePageIndexs.includes(index)) {
                 const newIndexs = [...visiblePageIndexs, index];
