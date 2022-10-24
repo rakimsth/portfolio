@@ -10,6 +10,7 @@ interface Props {
     index: number;
     name: string;
     route: string;
+    icon: JSX.Element;
   }[];
   selectedIndex: number;
   setSelectedIndex: React.Dispatch<React.SetStateAction<number>>;
@@ -72,7 +73,12 @@ export default function AppButtons({
     return selectedIndex === index ? '#44434b' : '#92938e';
   }
 
-  function renderPageButton(index: number, name: string, route: string) {
+  function renderPageButton(
+    index: number,
+    name: string,
+    route: string,
+    icon: JSX.Element
+  ) {
     return (
       <Box
         key={index}
@@ -108,7 +114,8 @@ export default function AppButtons({
           <Box
             sx={{ color: '#6997d5', width: 20, height: 20, mr: 0.4, ml: -1 }}
           >
-            <VscMarkdown />
+            {icon && icon}
+            {!icon && <VscMarkdown />}
           </Box>
           {name}
           <Box
@@ -164,8 +171,8 @@ export default function AppButtons({
         },
       }}
     >
-      {pages.map(({ index, name, route }) =>
-        renderPageButton(index, name, route)
+      {pages.map(({ index, name, route, icon }) =>
+        renderPageButton(index, name, route, icon)
       )}
     </Container>
   );

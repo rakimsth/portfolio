@@ -24,6 +24,7 @@ interface Page {
   index: number;
   name: string;
   route: string;
+  icon: JSX.Element;
 }
 
 function initVisiblePageIndexs(pages: Page[]) {
