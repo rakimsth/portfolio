@@ -22,7 +22,7 @@ const links = [
   {
     index: 4,
     title: 'Find me on Blog',
-    href: 'https://blogs.raktim.com.np/blog/',
+    href: 'https://blogs.raktim.com.np',
     icon: <FaBlogger />,
   },
 ];
