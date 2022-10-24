@@ -43,7 +43,7 @@ export default function Footer() {
           <Stack direction="row" spacing={0.5} sx={{ pl: 1 }}>
             <Box
               component={Link}
-              href="https://github.com/noworneverev/react-vscode-portfolio"
+              href="https://github.com/rakimsth/portfolio"
               underline="none"
               color="white"
               target="_blank"
