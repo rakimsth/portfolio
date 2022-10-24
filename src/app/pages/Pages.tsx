@@ -1,20 +1,20 @@
 import { FaTrophy, FaUniversity } from 'react-icons/fa';
 import { RiUserStarLine } from 'react-icons/ri';
-import { TbBulb, TbCertificate } from 'react-icons/tb';
-import { GiBinoculars, GiSkills } from 'react-icons/gi';
+import { TbBulb, TbCertificate, TbCode } from 'react-icons/tb';
+import { VscBook } from 'react-icons/vsc';
 
 const pages = [
   {
     index: 0,
     name: 'overview.md',
     route: '/overview',
-    icon: <GiBinoculars color="#D07000" />,
+    icon: <VscBook color="#F0A500" />,
   },
   {
     index: 1,
     name: 'skills.md',
     route: '/skills',
-    icon: <GiSkills color="#7E8A97" />,
+    icon: <TbCode color="#7E8A97" />,
   },
   {
     index: 2,
