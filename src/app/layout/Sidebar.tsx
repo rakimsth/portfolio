@@ -2,8 +2,9 @@ import React from 'react';
 import { Box, Link, Paper, Tooltip } from '@mui/material';
 import LightModeOutlinedIcon from '@mui/icons-material/LightModeOutlined';
 import DarkModeOutlinedIcon from '@mui/icons-material/DarkModeOutlined';
-import { VscFiles, VscSettingsGear } from 'react-icons/vsc';
+import { VscFiles, VscHome, VscSettingsGear } from 'react-icons/vsc';
 import { BiGitBranch } from 'react-icons/bi';
+import { Link as Travel } from 'react-router-dom';
 import Divider from '@mui/material/Divider';
 import links from '../pages/Links';
 
@@ -39,6 +40,29 @@ export default function Sidebar({
         justifyContent="center"
         flexDirection="column"
       >
+        <Tooltip title="Homepage of this project" arrow placement="right">
+          <Travel to="/">
+            <Box
+              sx={{
+                flexGrow: 0,
+                cursor: 'pointer',
+                color: '#858585',
+                fontSize: 24,
+                '&:hover': {
+                  color: 'white',
+                },
+              }}
+              display="flex"
+              justifyContent="center"
+            >
+              <Box mt={0.7}>
+                <VscHome />
+              </Box>
+            </Box>
+          </Travel>
+        </Tooltip>
+
+        <Divider sx={{ m: 0.5 }} />
         <Box
           sx={{
             borderLeft: expanded
@@ -71,7 +95,7 @@ export default function Sidebar({
         <Tooltip title="Source of this project" arrow placement="right">
           <Link
             target="_blank"
-            href="https://github.com/noworneverev/react-vscode-portfolio"
+            href="https://github.com/rakimsth/portfolio"
             underline="none"
             color="inherit"
             sx={{ WebkitTapHighlightColor: 'rgba(0,0,0,0)' }}
@@ -95,9 +119,7 @@ export default function Sidebar({
             </Box>
           </Link>
         </Tooltip>
-
         <Divider sx={{ m: 0.5 }} />
-
         {links.map((link) => (
           <Tooltip title={link.title} arrow placement="right" key={link.index}>
             <Link
@@ -127,7 +149,6 @@ export default function Sidebar({
           </Tooltip>
         ))}
       </Box>
-
       <Box
         sx={{ flexGrow: 0, pb: 0.5 }}
         display="flex"
