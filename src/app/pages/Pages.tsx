@@ -8,7 +8,7 @@ const pages = [
     index: 0,
     name: 'overview.md',
     route: '/overview',
-    icon: <GiBinoculars color="#BDF2D5" />,
+    icon: <GiBinoculars color="#D07000" />,
   },
   {
     index: 1,
