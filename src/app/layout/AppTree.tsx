@@ -67,6 +67,12 @@ export default function AppTree({
     return selectedIndex === index ? '#e2ffff' : '#69665f';
   }
 
+  const toProperCase = (label: string) => {
+    return label.replace(/\w\S*/g, (txt) => {
+      return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+    });
+  };
+
   return (
     <TreeView
       aria-label="file system navigator"
@@ -88,7 +94,7 @@ export default function AppTree({
           <TreeItem
             key={index}
             nodeId={index.toString()}
-            label={name}
+            label={toProperCase(name)}
             sx={{
               color: renderTreeItemColor(index),
               backgroundColor: renderTreeItemBgColor(index),
