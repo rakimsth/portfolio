@@ -8,6 +8,7 @@ I have taken inspiration from the [Link](https://github.com/noworneverev/react-v
   - Why? Because Vite's hot reloading and page building is blazing fast than react framework.
 - Added Docker Support
 - Added Airbnb coding style with eslint and prettier
+- Added CV Print Feature using marked package
 
 <div id="top"></div>
 
@@ -45,6 +46,7 @@ I have taken inspiration from the [Link](https://github.com/noworneverev/react-v
     </li>
     <li><a href="#features">Features</a></li>
     <li><a href="#contact">Contact</a></li>
+    <li><a href="#deploy">Deploy as Github Pages</a></li>
   </ol>
 </details>
 
@@ -145,7 +147,6 @@ The project is inspired by [Visual Studio Code](https://github.com/microsoft/vsc
 - Closable tabs
 - Collapsible explorer
 - Responsive web design
-- Google Analytics supported
 - Auto-deploy to gh-pages with github actions ready
 
 <p align="right">(<a href="#top">back to top</a>)</p>
@@ -159,3 +160,15 @@ Raktim Shrestha - [Personal Portfolio](https://rakimsth.com.np/) - rakimsth@gmai
 Project Link: [https://github.com/rakimsth/portfolio](https://github.com/rakimsth/portfolio)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
+
+<!-- Deploy -->
+
+## Deploy as Github Pages
+
+- Change the `base` in vite.config.js
+- Update the `GIT URL` as well as `CNAME` in deploy.sh file
+- Stay in root folder & run the following command to deploy
+
+```
+bash deploy.sh
+```

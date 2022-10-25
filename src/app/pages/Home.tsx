@@ -19,9 +19,9 @@ interface Props {
 export default function Home({ setSelectedIndex }: Props) {
   const { pathname } = useLocation();
   // Create reference to store the DOM element containing the animation
-  const el = useRef<HTMLSpanElement>(null);
+  const el: any = useRef<HTMLSpanElement>(null);
   // Create reference to store the Typed instance itself
-  const typed = useRef(null);
+  const typed: any = useRef(null);
   useEffect(() => {
     setSelectedIndex(-1);
   }, [setSelectedIndex]);
