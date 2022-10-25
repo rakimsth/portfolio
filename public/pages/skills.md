@@ -9,6 +9,7 @@
 ## Programming languages
 
 - JavaScript/TypeScript
+  - Node.js
   - React.js
   - Express.js
   - Hapi.js
