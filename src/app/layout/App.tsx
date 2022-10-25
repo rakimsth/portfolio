@@ -11,6 +11,7 @@ import {
 import { useEffect, useState } from 'react';
 import { Routes, Route, useNavigate, Navigate } from 'react-router-dom';
 import { isBrowser } from 'react-device-detect';
+import { marked } from 'marked';
 
 import AppTree from './AppTree';
 import Footer from './Footer';
@@ -76,8 +77,20 @@ export default function App() {
     localStorage.setItem('theme', darkMode ? 'light' : 'dark');
   }
 
-  const handleCVDownload = () => {
-    console.log('CV Download');
+  const handleCVDownload = async () => {
+    const resp = await fetch('pages/overview.md');
+    const data = await resp.text();
+    const cleanedData = data.replace('# 📖 Overview', '');
+    let html = marked.parse(cleanedData);
+    html = '<html>'
+      .concat('<body>')
+      .concat(html)
+      .concat('</body>')
+      .concat('</html>');
+    const myWindow: any = window.open('', '', 'width=1024,height=700');
+    myWindow.document.write(html);
+    myWindow.print();
+    myWindow.close();
   };
 
   useEffect(() => {
