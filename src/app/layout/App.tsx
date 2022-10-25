@@ -76,6 +76,10 @@ export default function App() {
     localStorage.setItem('theme', darkMode ? 'light' : 'dark');
   }
 
+  const handleCVDownload = () => {
+    console.log('CV Download');
+  };
+
   useEffect(() => {
     const currentTheme = localStorage.getItem('theme');
     if (!currentTheme) setDarkMode(true);
@@ -133,6 +137,7 @@ export default function App() {
                 setExpanded={setExpanded}
                 expanded={expanded}
                 darkMode={darkMode}
+                handleCVDownload={handleCVDownload}
                 handleThemeChange={handleThemeChange}
               />
             </Grid>

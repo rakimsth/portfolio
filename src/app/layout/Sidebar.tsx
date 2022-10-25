@@ -2,7 +2,12 @@ import React from 'react';
 import { Box, Link, Paper, Tooltip } from '@mui/material';
 import LightModeOutlinedIcon from '@mui/icons-material/LightModeOutlined';
 import DarkModeOutlinedIcon from '@mui/icons-material/DarkModeOutlined';
-import { VscFiles, VscHome, VscSettingsGear } from 'react-icons/vsc';
+import {
+  VscDesktopDownload,
+  VscFiles,
+  VscHome,
+  VscSettingsGear,
+} from 'react-icons/vsc';
 import { BiGitBranch } from 'react-icons/bi';
 import { Link as Travel } from 'react-router-dom';
 import Divider from '@mui/material/Divider';
@@ -13,6 +18,7 @@ interface Props {
   setExpanded: React.Dispatch<React.SetStateAction<boolean>>;
   darkMode: boolean;
   handleThemeChange: () => void;
+  handleCVDownload: () => void;
 }
 
 export default function Sidebar({
@@ -20,6 +26,7 @@ export default function Sidebar({
   setExpanded,
   darkMode,
   handleThemeChange,
+  handleCVDownload,
 }: Props) {
   return (
     <Box
@@ -186,6 +193,29 @@ export default function Sidebar({
             )}
           </Box>
         </Tooltip>
+
+        <Tooltip title="Download the CV" placement="right" arrow>
+          <Box
+            sx={{
+              flexGrow: 0,
+              fontSize: 24,
+              color: '#858585',
+              cursor: 'pointer',
+              '&:hover': {
+                color: 'white',
+              },
+              WebkitTapHighlightColor: 'rgba(0,0,0,0)',
+            }}
+            display="flex"
+            justifyContent="center"
+            onClick={handleCVDownload}
+          >
+            <Box mt={0.7}>
+              <VscDesktopDownload />
+            </Box>
+          </Box>
+        </Tooltip>
+
         <Box
           sx={{
             flexGrow: 0,
