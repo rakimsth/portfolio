@@ -155,7 +155,7 @@ The project is inspired by [Visual Studio Code](https://github.com/microsoft/vsc
 
 ## Contact
 
-Raktim Shrestha - [Personal Portfolio](https://rakimsth.com.np/) - rakimsth@gmail.com
+Raktim Shrestha - [Personal Portfolio](https://raktim.com.np/) - rakimsth@gmail.com
 
 Project Link: [https://github.com/rakimsth/portfolio](https://github.com/rakimsth/portfolio)
 
